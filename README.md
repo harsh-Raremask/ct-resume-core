@@ -153,8 +153,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📬 Contact
 
-* **Project Owner:** Your Name - [@your_twitter](https://twitter.com/your_twitter) - email@example.com
-* **Project Link:** [https://github.com/your-username/your-project-name](https://github.com/your-username/your-project-name)
+* **Project Owner:** Your Name - Harsh Dev(Team LUCIFER)
+* **Project Link:** [https://github.com/harsh-Raremask/ct-resume-core](https://github.com/harsh-Raremask/ct-resume-core)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
