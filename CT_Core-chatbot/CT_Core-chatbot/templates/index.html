@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT Core-chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v='6') }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+</head>
+<body>
+<div class="app">
+  <div class="sidebar">
+    <h1 class="logo"><span class="logo-mark">CT</span><span>CT Core-chatbot</span></h1>
+    <button class="new-chat-btn" onclick="newChat()">+ New Chat</button>
+    <p class="label">CHATS</p><div id="chats-list" class="chats-list"></div>
+    <p class="label" style="margin-top:8px">MY RESUME</p>
+    <div id="resume-status"><p class="muted">No resume uploaded</p></div>
+    <input type="file" id="resume-input" accept=".pdf,.docx,.txt" hidden>
+    <button class="upload-btn" onclick="document.getElementById('resume-input').click()">＋ Upload Resume</button>
+    <button class="quiz-open-btn" onclick="showAnalysis()">✦ Analyze Resume</button>
+    <button class="quiz-open-btn" onclick="showCareerPrompt()">↗ Career Path</button>
+  </div>
+  <div class="main">
+    <div id="progress-banner" class="progress-banner hidden"><div class="spinner"></div><span id="progress-msg">Working...</span></div>
+    <div id="analysis-panel" class="video-panel hidden">
+      <div class="video-header"><span class="video-title">ATS Resume Analysis</span><button onclick="hideAnalysis()" class="close-video-btn">✕</button></div>
+      <div class="analysis-form">
+        <input id="job-title" class="analysis-input" placeholder="Target job title (e.g. Data Analyst)">
+        <textarea id="job-description" class="analysis-textarea" placeholder="Paste the job description here..." rows="5"></textarea>
+        <button class="send-btn analysis-submit" onclick="analyzeResume()">Analyze Resume</button>
+      </div>
+    </div>
+    <div id="messages" class="messages"><div class="welcome"><div style="font-size:48px">📄</div><h2>Welcome to CT Core-chatbot</h2><p>Your AI-powered resume and career companion. Upload your resume, check ATS compatibility, or ask a career question.</p><div class="welcome-actions"><button onclick="showAnalysis()">✦ Analyze my resume</button><button onclick="showCareerPrompt()">↗ Build my career path</button></div></div></div>
+    <div class="chat-toolbar"><button class="export-btn" onclick="exportChat()" title="Export this chat as PDF">⬇ Export PDF</button></div>
+    <div class="input-area"><div class="input-box">
+      <div class="attach-wrap"><button type="button" id="attach-btn" class="attach-btn" onclick="document.getElementById('resume-input').click()" title="Upload resume">+</button></div>
+      <textarea id="user-input" placeholder="Ask about your resume, ATS, skills or career path..." rows="1" onkeydown="handleKey(event)"></textarea>
+      <button id="send-btn" onclick="send()" class="send-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+    </div></div>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='app.js', v='6') }}"></script>
+</body></html>
