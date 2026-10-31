@@ -1,4 +1,4 @@
-# Project Title
+# Project Title : CT Resume Core
 
 A brief, catchy description of what your project does and the main problem it solves.
 
